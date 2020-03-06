@@ -1,27 +1,28 @@
-FROM node:alpine
+# Build stage
+FROM node:12-alpine as build
+ENV NPM_CONFIG_LOGLEVEL warn
+WORKDIR /app
 
-RUN mkdir -p /opt/app
-RUN apk add --no-cache libc6-compat
-ENV NODE_ENV production
-ENV PORT 3000
-EXPOSE 3000
+RUN apk add --no-cache build-base python3
 
-WORKDIR /opt/app
+COPY . .
 
-COPY package.json /opt/app
-COPY package-lock.json /opt/app
-
-RUN npm install --no-optional
-
-COPY . /opt/app
-
+RUN npm ci
 RUN npm run build
 
-RUN npx next telemetry disable
+# Final stage
+FROM node:12-alpine
+ENV NODE_ENV production
+ENV NPM_CONFIG_LOGLEVEL warn
+WORKDIR /app
 
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nextjs -u 1001
+RUN apk add --no-cache build-base python3
 
-USER nextjs
+COPY --from=build ./app/package.json package.json
+COPY --from=build ./app/package-lock.json package-lock.json
+COPY --from=build ./app/.next .next
 
-CMD [ "npm", "start" ]
+RUN npm ci
+
+EXPOSE 3000
+CMD ["npm", "start"]
