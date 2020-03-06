@@ -1,6 +1,6 @@
-import { NextPage, NextPageContext } from "next";
-import { useRouter } from "next/router";
-import fetch from "isomorphic-unfetch";
+import { NextPage, NextPageContext } from 'next';
+import { useRouter } from 'next/router';
+import fetch from 'isomorphic-unfetch';
 
 type ItunesPageProps = {
   linksByPlatform: any;
@@ -24,7 +24,7 @@ ItunesPage.getInitialProps = async (ctx: NextPageContext) => {
   const { id } = ctx.query;
   const key = process.env.STREAMING_HELL_API_KEY;
   const res = await fetch(
-    `https://api.song.link/v1-alpha.1/links?platform=itunes&type=song&id=${id}&key=${key}`
+    `https://api.song.link/v1-alpha.1/links?platform=itunes&type=song&id=${id}&key=${key}`,
   );
   const json = await res.json();
   return { linksByPlatform: json.linksByPlatform };
