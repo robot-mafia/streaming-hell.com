@@ -18,11 +18,12 @@ WORKDIR /app
 
 RUN apk add --no-cache build-base python3
 
+COPY --from=build ./app/next.config.js nuxt.config.js
 COPY --from=build ./app/package.json package.json
 COPY --from=build ./app/package-lock.json package-lock.json
 COPY --from=build ./app/.next .next
 
 RUN npm ci
 
-EXPOSE 3000
+EXPOSE 3001
 CMD ["npm", "start"]
