@@ -5,7 +5,6 @@ import { Card } from '../ui/card';
 import { Song } from '../ui/song';
 import { Link } from '../ui/link';
 import { LinksBlock } from '../ui/links-block';
-import { AppleMusic } from '../ui/icons/apple-music';
 import React from 'react';
 import AppleMusicIcon from '../assets/images/service-icons/apple-music.svg';
 import SpotifyIcon from '../assets/images/service-icons/spotify.svg';
