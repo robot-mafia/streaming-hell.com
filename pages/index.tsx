@@ -20,6 +20,7 @@ import YandexIcon from '../assets/images/service-icons/yandex.svg';
 import ItunesIcon from '../assets/images/service-icons/itunes.svg';
 import GooglePlayIcon from '../assets/images/service-icons/google-play.svg';
 import AmazonIcon from '../assets/images/service-icons/amazon.svg';
+import SpinrillaIcon from '../assets/images/service-icons/spinrilla.svg';
 
 type ItunesPageProps = {
   data: any;
@@ -99,6 +100,9 @@ export const ItunesPage: NextPage<ItunesPageProps> = ({ data }) => {
             </GetLink>
             <GetLink data={data} platform="napster" name="Napster">
               <NapsterIcon />
+            </GetLink>
+            <GetLink data={data} platform="spinrilla" name="Spinrilla">
+              <SpinrillaIcon />
             </GetLink>
             <GetLink data={data} platform="yandex" name="Yandex">
               <YandexIcon />
