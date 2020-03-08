@@ -20,6 +20,8 @@ import YandexIcon from '../assets/images/service-icons/yandex.svg';
 import ItunesIcon from '../assets/images/service-icons/itunes.svg';
 import GooglePlayIcon from '../assets/images/service-icons/google-play.svg';
 import AmazonIcon from '../assets/images/service-icons/amazon.svg';
+import SpinrillaIcon from '../assets/images/service-icons/spinrilla.svg';
+import SoundCloudIcon from '../assets/images/service-icons/soundcloud.svg';
 
 type ItunesPageProps = {
   data: any;
@@ -91,6 +93,9 @@ export const ItunesPage: NextPage<ItunesPageProps> = ({ data }) => {
             <GetLink data={data} platform="deezer" name="Deezer">
               <DeezerIcon />
             </GetLink>
+            <GetLink data={data} platform="soundcloud" name="SoundCloud">
+              <SoundCloudIcon />
+            </GetLink>
             <GetLink data={data} platform="amazonMusic" name="Amazon Music">
               <AmazonMusicIcon />
             </GetLink>
@@ -99,6 +104,9 @@ export const ItunesPage: NextPage<ItunesPageProps> = ({ data }) => {
             </GetLink>
             <GetLink data={data} platform="napster" name="Napster">
               <NapsterIcon />
+            </GetLink>
+            <GetLink data={data} platform="spinrilla" name="Spinrilla">
+              <SpinrillaIcon />
             </GetLink>
             <GetLink data={data} platform="yandex" name="Yandex">
               <YandexIcon />
