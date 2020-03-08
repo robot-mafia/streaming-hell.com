@@ -7,6 +7,10 @@ const AlbumArtworkContainer = styled.div`
 `;
 
 const AlbumArtwork = styled.img`
+  margin: 0 auto;
+  min-height: 100%;
+  border-radius: 6px 6px 0 0;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;

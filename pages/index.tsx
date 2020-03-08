@@ -38,7 +38,13 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   text-align: center;
-  max-width: 356px;
+  max-width: 280px;
+
+  @media (min-width: 380px) {
+    max-width: 345px;
+  }
+
+  width: 100%;
   height: 100%;
   flex: 1 0 0%;
   margin: auto;
