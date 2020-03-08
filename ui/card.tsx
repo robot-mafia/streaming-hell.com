@@ -13,7 +13,7 @@ const Header = styled.div`
   color: black;
   font-size: 12px;
   text-align: left;
-  padding: 16px 16px 0px;
+  padding: 16px 16px 0;
 `;
 
 export interface CardProps {
