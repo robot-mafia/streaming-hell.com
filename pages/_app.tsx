@@ -35,16 +35,6 @@ export default class MyApp extends App {
     return (
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
-        <style jsx global>{`
-          body {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            letter-spacing: 0px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            height: 100%;
-          }
-        `}</style>
       </ThemeProvider>
     );
   }

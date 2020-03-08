@@ -1,6 +1,8 @@
+import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet, createGlobalStyle } from 'styled-components';
 import * as Sentry from '@sentry/browser';
+import { normalize } from 'styled-normalize';
 import { GA_TRACKING_ID } from '../lib/gtag';
 
 process.on('unhandledRejection', err => {
@@ -11,6 +13,19 @@ process.on('uncaughtException', err => {
   Sentry.captureException(err);
 });
 
+const GlobalStyles = createGlobalStyle`
+  ${normalize}
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+  }
+`;
+
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
@@ -19,7 +34,13 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
+          enhanceApp: App => props =>
+            sheet.collectStyles(
+              <React.Fragment>
+                <GlobalStyles />
+                <App {...props} />
+              </React.Fragment>,
+            ),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
