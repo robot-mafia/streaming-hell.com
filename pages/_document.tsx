@@ -16,13 +16,17 @@ process.on('uncaughtException', err => {
 const GlobalStyles = createGlobalStyle`
   ${normalize}
 
+  html, body, #__next {
+    height: 100%;
+    min-height: 100%;
+  }
+
   body {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     letter-spacing: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    height: 100%;
   }
 `;
 
