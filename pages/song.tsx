@@ -41,74 +41,78 @@ export type SongPageProps = {
 };
 
 export const SongPage: NextPage<SongPageProps> = ({ data }) => {
-  const currentSong = data.entitiesByUniqueId[data.entityUniqueId];
-  return (
-    <Container>
-      <Card>
-        <Song
-          title={currentSong.title}
-          artistName={currentSong.artistName}
-          thumbnailUrl={currentSong.thumbnailUrl}
-        ></Song>
-      </Card>
-      <Card title="Слушать">
-        <LinksBlock>
-          <GetLink data={data} platform="appleMusic" name="Apple Music">
-            <AppleMusicIcon />
-          </GetLink>
-          <GetLink data={data} platform="spotify" name="Spotify">
-            <SpotifyIcon />
-          </GetLink>
-          <GetLink data={data} platform="youtube" name="YouTube">
-            <YoutubeIcon />
-          </GetLink>
-          <GetLink data={data} platform="youtubeMusic" name="YouTube Music">
-            <YoutubeMusicIcon />
-          </GetLink>
-          <GetLink data={data} platform="google" name="Google Music">
-            <GoogleMusicIcon />
-          </GetLink>
-          <GetLink data={data} platform="pandora" name="Pandora">
-            <PandoraIcon />
-          </GetLink>
-          <GetLink data={data} platform="deezer" name="Deezer">
-            <DeezerIcon />
-          </GetLink>
-          <GetLink data={data} platform="soundcloud" name="SoundCloud">
-            <SoundCloudIcon />
-          </GetLink>
-          <GetLink data={data} platform="amazonMusic" name="Amazon Music">
-            <AmazonMusicIcon />
-          </GetLink>
-          <GetLink data={data} platform="tidal" name="Tidal">
-            <TidalIcon />
-          </GetLink>
-          <GetLink data={data} platform="napster" name="Napster">
-            <NapsterIcon />
-          </GetLink>
-          <GetLink data={data} platform="spinrilla" name="Spinrilla">
-            <SpinrillaIcon />
-          </GetLink>
-          <GetLink data={data} platform="yandex" name="Yandex">
-            <YandexIcon />
-          </GetLink>
-        </LinksBlock>
-      </Card>
-      <Card title="Купить">
-        <LinksBlock>
-          <GetLink data={data} platform="itunes" name="iTunes">
-            <ItunesIcon />
-          </GetLink>
-          <GetLink data={data} platform="googleStore" name="Google Play">
-            <GooglePlayIcon />
-          </GetLink>
-          <GetLink data={data} platform="amazonStore" name="Amazon">
-            <AmazonIcon />
-          </GetLink>
-        </LinksBlock>
-      </Card>
-    </Container>
-  );
+  if (data) {
+    const currentSong = data.entitiesByUniqueId[data.entityUniqueId];
+    return (
+      <Container>
+        <Card>
+          <Song
+            title={currentSong.title}
+            artistName={currentSong.artistName}
+            thumbnailUrl={currentSong.thumbnailUrl}
+          ></Song>
+        </Card>
+        <Card title="Слушать">
+          <LinksBlock>
+            <GetLink data={data} platform="appleMusic" name="Apple Music">
+              <AppleMusicIcon />
+            </GetLink>
+            <GetLink data={data} platform="spotify" name="Spotify">
+              <SpotifyIcon />
+            </GetLink>
+            <GetLink data={data} platform="youtube" name="YouTube">
+              <YoutubeIcon />
+            </GetLink>
+            <GetLink data={data} platform="youtubeMusic" name="YouTube Music">
+              <YoutubeMusicIcon />
+            </GetLink>
+            <GetLink data={data} platform="google" name="Google Music">
+              <GoogleMusicIcon />
+            </GetLink>
+            <GetLink data={data} platform="pandora" name="Pandora">
+              <PandoraIcon />
+            </GetLink>
+            <GetLink data={data} platform="deezer" name="Deezer">
+              <DeezerIcon />
+            </GetLink>
+            <GetLink data={data} platform="soundcloud" name="SoundCloud">
+              <SoundCloudIcon />
+            </GetLink>
+            <GetLink data={data} platform="amazonMusic" name="Amazon Music">
+              <AmazonMusicIcon />
+            </GetLink>
+            <GetLink data={data} platform="tidal" name="Tidal">
+              <TidalIcon />
+            </GetLink>
+            <GetLink data={data} platform="napster" name="Napster">
+              <NapsterIcon />
+            </GetLink>
+            <GetLink data={data} platform="spinrilla" name="Spinrilla">
+              <SpinrillaIcon />
+            </GetLink>
+            <GetLink data={data} platform="yandex" name="Yandex">
+              <YandexIcon />
+            </GetLink>
+          </LinksBlock>
+        </Card>
+        <Card title="Купить">
+          <LinksBlock>
+            <GetLink data={data} platform="itunes" name="iTunes">
+              <ItunesIcon />
+            </GetLink>
+            <GetLink data={data} platform="googleStore" name="Google Play">
+              <GooglePlayIcon />
+            </GetLink>
+            <GetLink data={data} platform="amazonStore" name="Amazon">
+              <AmazonIcon />
+            </GetLink>
+          </LinksBlock>
+        </Card>
+      </Container>
+    );
+  } else {
+    return null;
+  }
 };
 
 export default SongPage;

@@ -2,7 +2,7 @@ require('dotenv').config();
 
 module.exports = {
   env: {
-    STREAMING_HELL_API_ENDPOINT: process.env.STREAMING_HELL_API_ENDPOINT || 'http://95.216.141.51:3000/api/v1-alpha.1',
+    STREAMING_HELL_API_ENDPOINT: process.env.STREAMING_HELL_API_ENDPOINT || 'https://api.streaming-hell.com/v1',
   },
   webpack(config) {
     config.module.rules.push({
