@@ -22,7 +22,7 @@ COPY --from=build ./app/next.config.js nuxt.config.js
 COPY --from=build ./app/package.json package.json
 COPY --from=build ./app/package-lock.json package-lock.json
 COPY --from=build ./app/.next .next
-COPY --frum=build ./app/public public
+COPY --from=build ./app/public public
 
 RUN npm ci
 
