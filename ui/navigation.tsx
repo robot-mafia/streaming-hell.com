@@ -1,7 +1,6 @@
 import React from 'react';
-import Router from 'next/router';
+import Link from 'next/link';
 import styled from 'styled-components';
-import Avatar from '@atlaskit/avatar';
 
 const Container = styled.div`
   width: 100%;
@@ -19,6 +18,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
+  margin-top: -4px;
   display: flex;
   align-items: center;
   color: #172b4d;
@@ -27,7 +27,8 @@ const Title = styled.div`
 `;
 
 const TitleText = styled.div`
-  margin-left: 10px;
+  margin-top: 2px;
+  margin-left: 3px;
 `;
 
 const Login = styled.div`
@@ -37,17 +38,20 @@ const Login = styled.div`
   text-decoration: none;
 `;
 
+const Logo = styled.img`
+  height: auto;
+  max-height: 47px;
+  max-width: 100%;
+`;
+
 export const Navigation: React.FC = () => {
   return (
     <Container>
       <Title>
-        <Avatar
-          src={'/images/logo.jpg'}
-          name="Logo"
-          size="small"
-          onClick={() => Router.push('/')}
-        />
-        <TitleText>Streaming Hell 🔥</TitleText>
+        <Link href="/">
+          <Logo src={'/images/logo.svg'} />
+        </Link>
+        <TitleText>Streaming Hell</TitleText>
       </Title>
     </Container>
   );
