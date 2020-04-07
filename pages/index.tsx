@@ -1,8 +1,9 @@
 import { NextPage, NextPageContext } from 'next';
 import styled from 'styled-components';
 import fetch from 'isomorphic-unfetch';
-import { Navigation } from '../ui/navigation';
 import dynamic from 'next/dynamic';
+
+const SongPage = dynamic(() => import('./song'));
 
 const Wrapper = styled.div`
   display: flex;
@@ -28,8 +29,27 @@ const Container = styled.div`
   padding: 16px;
 `;
 
-const UnderConstruction = styled.h1`
-  font-size: 20px;
+const Hero = styled.h1`
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  height: 65vh;
+  max-height: 100%;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding: 25px;
+`;
+
+const HeroText = styled.h1`
+  color: #172b4d;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 60px;
+
+  @media (max-width: 428px) {
+    font-size: 30px;
+    line-height: 50px;
+  }
 `;
 
 type IndexPageProps = {
@@ -37,19 +57,18 @@ type IndexPageProps = {
   data?: any;
 };
 
-const SongPage = dynamic(() => import('./song'));
-
 export const IndexPage: NextPage<IndexPageProps> = ({ songUrl, data }) => {
   return (
     <Wrapper>
-      <Navigation></Navigation>
-      <Container>
-        {songUrl ? (
+      {songUrl ? (
+        <Container>
           <SongPage data={data} />
-        ) : (
-          <UnderConstruction>Сайт находится в разработке...</UnderConstruction>
-        )}
-      </Container>
+        </Container>
+      ) : (
+        <Hero>
+          <HeroText>Share and find music between streaming services</HeroText>
+        </Hero>
+      )}
     </Wrapper>
   );
 };
