@@ -10,7 +10,7 @@
     "docker:archive:push": "docker save streaming-hell-com:$npm_package_version  | ssh -C root@95.216.141.51 docker load"
   },
   "dependencies": {
-    "@atlaskit/avatar": "17.1.7",
+    "@atlaskit/avatar": "17.1.9",
     "@atlaskit/button": "13.3.7",
     "@atlaskit/dynamic-table": "13.7.0",
     "@atlaskit/form": "7.1.3",
