@@ -31,7 +31,7 @@
     "@types/react": "16.9.32",
     "babel-plugin-styled-components": "1.10.7",
     "dotenv": "8.2.0",
-    "prettier": "1.19.1",
+    "prettier": "2.0.4",
     "typescript": "3.8.3"
   }
 }
