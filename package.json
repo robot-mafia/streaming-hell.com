@@ -14,7 +14,7 @@
     "@atlaskit/button": "13.3.9",
     "@atlaskit/dynamic-table": "13.7.2",
     "@atlaskit/form": "7.2.0",
-    "@atlaskit/global-navigation": "9.0.0",
+    "@atlaskit/global-navigation": "9.0.1",
     "@atlaskit/navigation-next": "8.0.3",
     "@atlaskit/textfield": "3.1.7",
     "@sentry/browser": "5.15.4",
