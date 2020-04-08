@@ -12,7 +12,7 @@
   "dependencies": {
     "@atlaskit/avatar": "17.1.9",
     "@atlaskit/button": "13.3.9",
-    "@atlaskit/dynamic-table": "13.7.0",
+    "@atlaskit/dynamic-table": "13.7.2",
     "@atlaskit/form": "7.2.0",
     "@atlaskit/global-navigation": "9.0.0",
     "@atlaskit/navigation-next": "8.0.3",
