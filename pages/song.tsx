@@ -52,7 +52,7 @@ export const SongPage: NextPage<SongPageProps> = ({ data }) => {
             thumbnailUrl={currentSong.thumbnailUrl}
           ></Song>
         </Card>
-        <Card title="Слушать">
+        <Card title="Listen">
           <LinksBlock>
             <GetLink data={data} platform="appleMusic" name="Apple Music">
               <AppleMusicIcon />
@@ -95,7 +95,7 @@ export const SongPage: NextPage<SongPageProps> = ({ data }) => {
             </GetLink>
           </LinksBlock>
         </Card>
-        <Card title="Купить">
+        <Card title="Buy">
           <LinksBlock>
             <GetLink data={data} platform="itunes" name="iTunes">
               <ItunesIcon />

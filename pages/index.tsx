@@ -10,7 +10,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100%;
+  min-height: calc(100vh - 60px);
+  margin-bottom: 60px;
   width: 100%;
 `;
 
@@ -33,7 +34,7 @@ const Hero = styled.h1`
   display: flex;
   align-items: center;
   max-width: 600px;
-  height: 65vh;
+  height: 130px;
   max-height: 100%;
   margin-top: 20px;
   margin-bottom: 0;

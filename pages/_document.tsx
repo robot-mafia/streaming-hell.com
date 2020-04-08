@@ -2,7 +2,6 @@ import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet, createGlobalStyle } from 'styled-components';
 import * as Sentry from '@sentry/browser';
-import { normalize } from 'styled-normalize';
 import { GA_TRACKING_ID } from '../lib/gtag';
 
 process.on('unhandledRejection', (err) => {
@@ -14,8 +13,6 @@ process.on('uncaughtException', (err) => {
 });
 
 const GlobalStyles = createGlobalStyle`
-  ${normalize}
-
   html, body, #__next {
     height: 100%;
     min-height: 100%;

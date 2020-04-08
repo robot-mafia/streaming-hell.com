@@ -1,6 +1,7 @@
 import App from 'next/app';
 import Router from 'next/router';
 import React from 'react';
+import '@atlaskit/css-reset';
 import { ThemeProvider } from 'styled-components';
 import * as Sentry from '@sentry/browser';
 import * as gtag from '../lib/gtag';

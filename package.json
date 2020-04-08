@@ -1,6 +1,6 @@
 {
   "name": "streaming-hell.com",
-  "version": "1.6.6",
+  "version": "1.7.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,6 +12,7 @@
   "dependencies": {
     "@atlaskit/avatar": "17.1.9",
     "@atlaskit/button": "13.3.9",
+    "@atlaskit/css-reset": "5.0.10",
     "@atlaskit/dynamic-table": "13.7.2",
     "@atlaskit/form": "7.2.0",
     "@atlaskit/global-navigation": "9.0.1",
@@ -22,8 +23,7 @@
     "next": "9.3.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "styled-components": "5.1.0",
-    "styled-normalize": "8.0.7"
+    "styled-components": "5.1.0"
   },
   "devDependencies": {
     "@svgr/webpack": "5.3.1",
