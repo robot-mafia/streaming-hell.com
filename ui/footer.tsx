@@ -30,13 +30,26 @@ const Copyright = styled.div`
   color: #86868b;
   font-size: 12px;
   font-weight: 500;
+  line-height: 20px;
+`;
+
+const CopyrightLink = styled.a`
+  color: #86868b;
+  border-bottom: 1px solid #d6d6de;
+  transition: border-bottom-color 0.3s;
+
+  &:hover {
+    color: #86868b;
+    text-decoration: none;
+    border-bottom-color: transparent;
+  }
 `;
 
 export const Footer: React.FC = () => {
   return (
     <Container>
       <Copyright>
-        Copyright © {new Date().getFullYear()} robotmafia Inc. All rights
+        Made with 🖤 in <CopyrightLink href="https://robotmafia.io" target="_blank">robotmafia</CopyrightLink>. All rights
         reserved.
         <br />
         <style jsx>

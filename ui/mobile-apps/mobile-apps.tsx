@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 
 const Icon = styled.div`
-  margin-bottom: -17px;
+  margin-bottom: ${props => props.isAvalible ? '0' : '-17px'};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +22,7 @@ const Icon = styled.div`
   transition: opacity 0.3s, margin-bottom 0.3s;
 
   &:hover {
-    opacity: 1 !important;
+    opacity: ${props => props.isAvalible ? '1 !important' : '0.5 !important'};
     margin-bottom: 0;
   }
 
@@ -46,6 +46,10 @@ const IconText = styled.div`
   }
 `;
 
+const Link = styled.a`
+  display: inline-flex;
+`;
+
 export const MobileApps: React.FC = () => {
   return (
     <Container>
@@ -53,9 +57,10 @@ export const MobileApps: React.FC = () => {
         <AppStore />
         <IconText>Avalible soon</IconText>
       </Icon>
-      <Icon>
-        <GooglePlay />
-        <IconText>Avalible soon</IconText>
+      <Icon isAvalible>
+        <Link target="_blank" href="https://play.google.com/store/apps/details?id=io.robotmafia.streaminghell">
+          <GooglePlay />
+        </Link>
       </Icon>
     </Container>
   );
