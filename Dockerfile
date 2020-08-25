@@ -26,5 +26,5 @@ COPY --from=build ./app/public public
 
 RUN npm ci
 
-EXPOSE 3000
+EXPOSE 3010
 CMD ["npm", "start"]
