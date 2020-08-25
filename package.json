@@ -1,14 +1,14 @@
 {
-  "name": "streaming-hell.com",
-  "version": "1.7.2",
-  "private": true,
+  "name": "@streaming-hell/streaming-hell.com",
+  "version": "1.8.0",
+  "description": "Streaming Hell website",
+  "author": "Streaming Hell nonprofit organization.",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev -p 3010",
     "build": "next build",
-    "start": "next start -p 3010",
-    "docker:build": "docker build -t streaming-hell-com:$npm_package_version --no-cache -f Dockerfile .",
-    "docker:archive:push": "docker save streaming-hell-com:$npm_package_version  | ssh -C root@95.216.141.51 docker load"
-  },
+    "start": "next start -p 3010"
+ },
   "dependencies": {
     "@atlaskit/avatar": "20.0.3",
     "@atlaskit/button": "13.3.9",

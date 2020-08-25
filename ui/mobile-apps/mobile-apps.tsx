@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 
 const Icon = styled.div`
-  margin-bottom: ${props => props.isAvalible ? '0' : '-17px'};
+  margin-bottom: ${props => (props.isAvalible ? '0' : '-17px')};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +22,7 @@ const Icon = styled.div`
   transition: opacity 0.3s, margin-bottom 0.3s;
 
   &:hover {
-    opacity: ${props => props.isAvalible ? '1 !important' : '0.5 !important'};
+    opacity: ${props => (props.isAvalible ? '1 !important' : '0.5 !important')};
     margin-bottom: 0;
   }
 
@@ -58,7 +58,10 @@ export const MobileApps: React.FC = () => {
         <IconText>Avalible soon</IconText>
       </Icon>
       <Icon isAvalible>
-        <Link target="_blank" href="https://play.google.com/store/apps/details?id=io.robotmafia.streaminghell">
+        <Link
+          target="_blank"
+          href="https://play.google.com/store/apps/details?id=io.robotmafia.streaminghell"
+        >
           <GooglePlay />
         </Link>
       </Icon>

@@ -49,8 +49,11 @@ export const Footer: React.FC = () => {
   return (
     <Container>
       <Copyright>
-        Made with 🖤 in <CopyrightLink href="https://robotmafia.io" target="_blank">robotmafia</CopyrightLink>. All rights
-        reserved.
+        Made with 🖤 in{' '}
+        <CopyrightLink href="https://robotmafia.io" target="_blank">
+          robotmafia
+        </CopyrightLink>
+        . All rights reserved.
         <br />
         <style jsx>
           {`
