@@ -1,7 +1,9 @@
 {
   "name": "@streaming-hell/streaming-hell.com",
   "version": "1.8.0",
-  "private": true,
+  "description": "Streaming Hell website",
+  "author": "Streaming Hell nonprofit organization.",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev -p 3010",
     "build": "next build",
