@@ -1,16 +1,6 @@
-import { NextPage, NextPageContext } from 'next';
+import { NextPage } from 'next';
 import styled from 'styled-components';
-import React, { Fragment } from 'react';
-import TextField from '@atlaskit/textfield';
-import Button, { ButtonGroup } from '@atlaskit/button';
-import Form, {
-  CheckboxField,
-  Field,
-  FormFooter,
-  HelperMessage,
-  ErrorMessage,
-  ValidMessage,
-} from '@atlaskit/form';
+import React from 'react';
 
 const Wrapper = styled.div`
   background-color: #fafbfc;
@@ -65,25 +55,25 @@ const Title = styled.div`
 export type LoginPageProps = {};
 
 export const LoginPage: NextPage<LoginPageProps> = () => {
-  const isServer = () => typeof window === `undefined`;
-  const TelegramLoginWidget = () =>
-    isServer() ? null : (
-      <>
-        <script
-          async
-          src="https://telegram.org/js/telegram-widget.js?7"
-          data-telegram-login="streaming-hell_bot"
-          data-size="small"
-          data-request-access="write"
-        ></script>
-      </>
-    );
   return (
     <Wrapper>
       <Container>
         <FormContainer>
           <Title>Войдите в свою учетную запись</Title>
-          <TelegramLoginWidget />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `
+              <script
+                async
+                src="https://telegram.org/js/telegram-widget.js?11"
+                data-telegram-login="streaminghell_bot"
+                data-size="medium"
+                data-radius="3"
+                data-auth-url="https://api.streaming-hell.com/v1/auth/telegram"
+                data-request-access="write"
+              ></script>`,
+            }}
+          />
         </FormContainer>
       </Container>
     </Wrapper>
