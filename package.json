@@ -20,7 +20,7 @@
     "@atlaskit/textfield": "3.1.9",
     "@sentry/browser": "5.21.4",
     "isomorphic-unfetch": "3.0.0",
-    "next": "9.3.4",
+    "next": "9.5.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "styled-components": "5.1.1"
