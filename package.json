@@ -10,7 +10,7 @@
     "start": "next start -p 3010"
  },
   "dependencies": {
-    "@atlaskit/avatar": "20.0.3",
+    "@atlaskit/avatar": "20.0.4",
     "@atlaskit/button": "14.0.3",
     "@atlaskit/css-reset": "6.0.1",
     "@atlaskit/dynamic-table": "14.1.1",
