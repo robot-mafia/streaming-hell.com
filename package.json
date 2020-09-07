@@ -16,7 +16,7 @@
     "@atlaskit/dynamic-table": "14.1.2",
     "@atlaskit/form": "8.1.4",
     "@atlaskit/global-navigation": "10.0.3",
-    "@atlaskit/navigation-next": "9.0.6",
+    "@atlaskit/navigation-next": "9.0.7",
     "@atlaskit/textfield": "4.0.5",
     "@sentry/browser": "5.22.3",
     "isomorphic-unfetch": "3.0.0",
