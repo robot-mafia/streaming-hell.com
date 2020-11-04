@@ -17,7 +17,7 @@
     "@atlaskit/form": "8.1.5",
     "@atlaskit/global-navigation": "10.0.4",
     "@atlaskit/navigation-next": "9.0.8",
-    "@atlaskit/textfield": "4.0.8",
+    "@atlaskit/textfield": "4.0.9",
     "@sentry/browser": "5.25.0",
     "isomorphic-unfetch": "3.1.0",
     "next": "10.0.1",
