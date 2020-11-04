@@ -23,7 +23,7 @@
     "next": "10.0.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "styled-components": "5.2.0"
+    "styled-components": "5.2.1"
   },
   "devDependencies": {
     "@svgr/webpack": "5.4.0",
