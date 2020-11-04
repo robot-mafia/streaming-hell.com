@@ -36,6 +36,7 @@ const Copyright = styled.div`
 const CopyrightLink = styled.a`
   color: #86868b;
   border-bottom: 1px solid #d6d6de;
+  text-decoration: none;
   transition: border-bottom-color 0.3s;
 
   &:hover {

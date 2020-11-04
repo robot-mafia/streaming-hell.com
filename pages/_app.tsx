@@ -1,9 +1,10 @@
 import App from 'next/app';
 import Router from 'next/router';
 import React from 'react';
-import '@atlaskit/css-reset';
-import { ThemeProvider } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { normalize } from 'styled-normalize';
 import * as Sentry from '@sentry/browser';
+import { withApplicationInsights } from '../lib/applicationinsights';
 import * as gtag from '../lib/gtag';
 import { SiteLayout } from '../ui/layouts/site';
 
@@ -13,13 +14,17 @@ Sentry.init({
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 
+const GlobalStyle = createGlobalStyle`
+  ${normalize}
+`;
+
 const theme = {
   colors: {
     primary: '#0070f3',
   },
 };
 
-export default class MyApp extends App {
+class MyApp extends App {
   componentDidCatch(error, errorInfo) {
     Sentry.withScope(scope => {
       Object.keys(errorInfo).forEach(key => {
@@ -35,11 +40,19 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <ThemeProvider theme={theme}>
-        <SiteLayout>
-          <Component {...pageProps} />
-        </SiteLayout>
-      </ThemeProvider>
+      <>
+        <GlobalStyle />
+        <ThemeProvider theme={theme}>
+          <SiteLayout>
+            <Component {...pageProps} />
+          </SiteLayout>
+        </ThemeProvider>
+      </>
     );
   }
 }
+
+export default withApplicationInsights({
+  instrumentationKey: '08992eee-2c82-4a99-9239-7c7844a50f16',
+  isEnabled: true, //process.env.NODE_ENV === 'production'
+})(MyApp);
