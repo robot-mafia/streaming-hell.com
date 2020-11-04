@@ -1,8 +1,8 @@
 import App from 'next/app';
 import Router from 'next/router';
 import React from 'react';
-import '@atlaskit/css-reset';
-import { ThemeProvider } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { normalize } from 'styled-normalize';
 import * as Sentry from '@sentry/browser';
 import { withApplicationInsights } from '../lib/applicationinsights';
 import * as gtag from '../lib/gtag';
@@ -13,6 +13,10 @@ Sentry.init({
 });
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url));
+
+const GlobalStyle = createGlobalStyle`
+  ${normalize}
+`;
 
 const theme = {
   colors: {
@@ -36,11 +40,14 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <ThemeProvider theme={theme}>
-        <SiteLayout>
-          <Component {...pageProps} />
-        </SiteLayout>
-      </ThemeProvider>
+      <>
+        <GlobalStyle />
+        <ThemeProvider theme={theme}>
+          <SiteLayout>
+            <Component {...pageProps} />
+          </SiteLayout>
+        </ThemeProvider>
+      </>
     );
   }
 }

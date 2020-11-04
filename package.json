@@ -15,21 +15,14 @@
     "start": "next start -p 3010"
   },
   "dependencies": {
-    "@atlaskit/avatar": "20.0.6",
-    "@atlaskit/button": "15.1.2",
-    "@atlaskit/css-reset": "6.0.4",
-    "@atlaskit/dynamic-table": "14.1.4",
-    "@atlaskit/form": "8.1.6",
-    "@atlaskit/global-navigation": "10.0.4",
-    "@atlaskit/navigation-next": "9.0.8",
-    "@atlaskit/textfield": "4.0.9",
     "@microsoft/applicationinsights-web": "^2.5.9",
     "@sentry/browser": "5.27.2",
     "isomorphic-unfetch": "3.1.0",
     "next": "10.0.1",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
-    "styled-components": "5.2.1"
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "styled-components": "5.2.1",
+    "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
     "@svgr/webpack": "5.4.0",
