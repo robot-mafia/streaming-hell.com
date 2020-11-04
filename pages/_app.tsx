@@ -4,6 +4,7 @@ import React from 'react';
 import '@atlaskit/css-reset';
 import { ThemeProvider } from 'styled-components';
 import * as Sentry from '@sentry/browser';
+import { withApplicationInsights } from '../lib/applicationinsights';
 import * as gtag from '../lib/gtag';
 import { SiteLayout } from '../ui/layouts/site';
 
@@ -19,7 +20,7 @@ const theme = {
   },
 };
 
-export default class MyApp extends App {
+class MyApp extends App {
   componentDidCatch(error, errorInfo) {
     Sentry.withScope(scope => {
       Object.keys(errorInfo).forEach(key => {
@@ -43,3 +44,8 @@ export default class MyApp extends App {
     );
   }
 }
+
+export default withApplicationInsights({
+  instrumentationKey: '08992eee-2c82-4a99-9239-7c7844a50f16',
+  isEnabled: true, //process.env.NODE_ENV === 'production'
+})(MyApp);

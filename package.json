@@ -1,14 +1,19 @@
 {
   "name": "@streaming-hell/streaming-hell.com",
-  "version": "1.8.0",
-  "description": "Streaming Hell website",
-  "author": "Streaming Hell nonprofit organization.",
+  "version": "1.9.0",
+  "description": "Search music between streaming services",
+  "homepage": "https://github.com/evilsprut/streaming-hell.com#readme",
+  "bugs": {
+    "url": "https://github.com/evilsprut/streaming-hell.com/issues",
+    "email": "hey@evilsprut.com"
+  },
+  "author": "Aleksandr Bukhalo <hey@evilsprut.com>",
   "license": "MIT",
   "scripts": {
     "dev": "next dev -p 3010",
     "build": "next build",
     "start": "next start -p 3010"
- },
+  },
   "dependencies": {
     "@atlaskit/avatar": "20.0.6",
     "@atlaskit/button": "15.1.2",
@@ -18,6 +23,7 @@
     "@atlaskit/global-navigation": "10.0.4",
     "@atlaskit/navigation-next": "9.0.8",
     "@atlaskit/textfield": "4.0.9",
+    "@microsoft/applicationinsights-web": "^2.5.9",
     "@sentry/browser": "5.27.2",
     "isomorphic-unfetch": "3.1.0",
     "next": "10.0.1",
