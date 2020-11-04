@@ -12,7 +12,8 @@
   "scripts": {
     "dev": "next dev -p 3010",
     "build": "next build",
-    "start": "next start -p 3010"
+    "start": "next start -p 3010",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@microsoft/applicationinsights-web": "^2.5.9",
