@@ -7,7 +7,7 @@ RUN apk add --no-cache build-base python3
 
 COPY . .
 
-RUN npm ci
+RUN npm i
 RUN npm run build
 
 # Final stage
