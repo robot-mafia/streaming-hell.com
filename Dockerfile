@@ -1,5 +1,5 @@
 # Build stage
-FROM node:15-alpine as build
+FROM node:17-alpine as build
 ENV NPM_CONFIG_LOGLEVEL warn
 WORKDIR /app
 
@@ -11,7 +11,7 @@ RUN npm ci
 RUN npm run build
 
 # Final stage
-FROM node:15-alpine
+FROM node:17-alpine
 ENV NODE_ENV production
 ENV NPM_CONFIG_LOGLEVEL warn
 WORKDIR /app
