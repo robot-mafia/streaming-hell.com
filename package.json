@@ -22,7 +22,7 @@
     "next": "10.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "styled-components": "5.2.1",
+    "styled-components": "5.3.5",
     "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
