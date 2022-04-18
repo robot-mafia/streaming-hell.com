@@ -8,7 +8,7 @@ RUN pnpm install --frozen-lockfile
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
-RUN pnpm build && pnpm prune --prod
+RUN pnpm build
 
 # Production image, copy all the files and run next
 FROM node:17-alpine AS runner
