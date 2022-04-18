@@ -1,30 +1,52 @@
-# Build stage
-FROM node:15-alpine as build
-ENV NPM_CONFIG_LOGLEVEL warn
+# Install dependencies only when needed
+FROM node:17-alpine AS deps
+# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+RUN apk add --no-cache libc6-compat && npm i -g pnpm
 WORKDIR /app
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
 
-RUN apk add --no-cache build-base python3
-
+# Rebuild the source code only when needed
+FROM node:17-alpine AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-RUN npm ci
-RUN npm run build
+# Next.js collects completely anonymous telemetry data about general usage.
+# Learn more here: https://nextjs.org/telemetry
+# Uncomment the following line in case you want to disable telemetry during the build.
+ENV NEXT_TELEMETRY_DISABLED 1
 
-# Final stage
-FROM node:15-alpine
-ENV NODE_ENV production
-ENV NPM_CONFIG_LOGLEVEL warn
+RUN pnpm build
+
+# If using npm comment out above and use below instead
+# RUN npm run build
+
+# Production image, copy all the files and run next
+FROM node:17-alpine AS runner
 WORKDIR /app
 
-RUN apk add --no-cache build-base python3
+ENV NODE_ENV production
+# Uncomment the following line in case you want to disable telemetry during runtime.
+ENV NEXT_TELEMETRY_DISABLED 1
 
-COPY --from=build ./app/next.config.js nuxt.config.js
-COPY --from=build ./app/package.json package.json
-COPY --from=build ./app/package-lock.json package-lock.json
-COPY --from=build ./app/.next .next
-COPY --from=build ./app/public public
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
-RUN npm ci
+# You only need to copy next.config.js if you are NOT using the default configuration
+# COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package.json ./package.json
 
-EXPOSE 3010
-CMD ["npm", "start"]
+# Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+
+EXPOSE 3000
+
+ENV PORT 3000
+
+CMD ["node", "server.js"]

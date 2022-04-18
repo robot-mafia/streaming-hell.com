@@ -1,0 +1,79 @@
+.box {
+  max-width: 36rem;
+  text-align: center;
+  width: 100%;
+  flex: 1 0 0;
+  margin: auto;
+  padding: 1.6rem;
+}
+
+.thumbnailBox {
+  position: relative;
+  padding: 0 0 100%;
+}
+
+.thumbnail {
+  margin: 0 auto;
+  min-height: 100%;
+  border-radius: 0.6rem 0.6rem 0 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.songInfo {
+  color: var(--color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+}
+
+.artistName {
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 2.2rem;
+}
+
+.links {
+  padding: 0.8rem 1.6rem;
+}
+
+.linksBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.linksBlock {
+  display: block;
+  width: 25%;
+  margin: 1rem 0;
+  text-decoration: none;
+}
+
+.linksBlockBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.linksBlockTitle {
+  font-weight: 600;
+  color: var(--color);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
