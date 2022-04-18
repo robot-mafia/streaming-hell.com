@@ -16,7 +16,7 @@ enum PlatformKey {
   p = 'pandora',
   d = 'deezer',
   t = 'tidal',
-  a = 'amazon',
+  a = 'amazonMusic',
   sc = 'soundcloud',
   n = 'napster',
   ya = 'yandex',
