@@ -8,6 +8,9 @@ export const Header: FC = () => {
         <img
           className={s.logoImg}
           src="/images/logo.svg"
+          width={35}
+          height={35}
+          alt="Streaming Hell logotype"
         />
         <div className={s.logoText}>Streaming Hell</div>
       </a>

@@ -10,6 +10,7 @@ export const Default: FC<PropsWithChildren<DefaultProps>> = ({ children }) => {
     <Fragment>
       <Head>
         <title>Streaming Hell</title>
+        <meta name="description" content="Share and find music between streaming services" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           rel="apple-touch-icon"

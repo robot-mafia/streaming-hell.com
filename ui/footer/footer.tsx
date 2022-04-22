@@ -11,6 +11,7 @@ export const Footer: FC = () => {
         <a
           target="_blank"
           rel="noreferrer"
+          aria-label="Streaming Hell group in VK social network"
           href="https://vk.com/streaminghell"
           className={s.socialLink}
         >
@@ -28,6 +29,7 @@ export const Footer: FC = () => {
         <a
           target="_blank"
           rel="noreferrer"
+          aria-label="Streaming Hell channel in Telegram"
           href="https://t.me/streaminghell"
           className={s.socialLink}
         >
