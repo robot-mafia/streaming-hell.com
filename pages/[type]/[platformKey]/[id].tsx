@@ -154,7 +154,7 @@ const Entity: NextPage = ({
                 className={s.linksBlock}
               >
                 <div className={s.linksBlockBox}>
-                  <img src={link.logo} />
+                  <img src={link.logo} alt="Streaming provider logotype" />
                   <div className={s.linksBlockTitle}>{link.name}</div>
                 </div>
               </a>
@@ -175,7 +175,7 @@ const Entity: NextPage = ({
                   className={s.linksBlock}
                 >
                   <div className={s.linksBlockBox}>
-                    <img src={link.logo} />
+                    <img src={link.logo} alt="Streaming provider logotype" />
                     <div className={s.linksBlockTitle}>{link.name}</div>
                   </div>
                 </a>
